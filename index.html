@@ -3,30 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Web</title>
+    <title>Mon Site Web - Accueil</title>
+    <!-- Intégration des polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Lien vers notre feuille de style -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Méta-données pour le SEO -->
+    <meta name="description" content="Site web personnel présentant mes projets, compétences et réalisations">
+    <meta name="keywords" content="portfolio, développement web, projets, design">
+    <meta name="author" content="Votre Nom">
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur Mon Site</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="pages/galerie.html">Galerie</a></li>
-                <li><a href="pages/contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Mon Site Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="pages/galerie.html">Galerie</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <h2>Titre principal</h2>
-            <p>Bienvenue sur mon site web en construction.</p>
+            <div class="container">
+                <h2 class="fade-in">Bienvenue sur Mon Site Web</h2>
+                <p class="slide-in">Un espace où je partage mes projets, mes idées et mes créations.</p>
+                <a href="pages/galerie.html" class="btn">Découvrir ma galerie</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Ce que je propose</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📷</div>
+                        <h3>Galerie</h3>
+                        <p>Découvrez ma collection d'images et de photographies.</p>
+                        <a href="pages/galerie.html" class="feature-link">Voir la galerie →</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💼</div>
+                        <h3>Projets</h3>
+                        <p>Explorez les différents projets sur lesquels j'ai travaillé.</p>
+                        <a href="#" class="feature-link">Voir les projets →</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✉️</div>
+                        <h3>Contact</h3>
+                        <p>Vous avez une question ou un projet ? Contactez-moi !</p>
+                        <a href="pages/contact.html" class="feature-link">Me contacter →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">À propos de moi</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <!-- Placeholder pour l'image de profil -->
+                        <img src="https://via.placeholder.com/300x300?text=Photo+de+profil" alt="Photo de profil">
+                    </div>
+                    <div class="about-text">
+                        <h3>Qui suis-je ?</h3>
+                        <p>Je suis un passionné de développement web et de design. J'aime créer des sites web modernes, élégants et fonctionnels qui répondent aux besoins des utilisateurs.</p>
+                        <p>Mon parcours m'a permis d'acquérir des compétences dans divers domaines : HTML/CSS, JavaScript, design responsive, et bien plus encore.</p>
+                        <p>En dehors du développement, j'aime la photographie, la lecture et les randonnées en montagne.</p>
+                        <a href="pages/contact.html" class="btn">Me contacter</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 - Mon Site Web</p>
+        <div class="container">
+            <p>&copy; 2025 - Mon Site Web. Tous droits réservés.</p>
+            <div class="social-links">
+                <!-- Placeholder pour les liens sociaux -->
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">GitHub</a>
+                <a href="#" class="social-link">Twitter</a>
+            </div>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
