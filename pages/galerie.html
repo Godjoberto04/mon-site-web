@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerie de Couleurs - Mon Site Web</title>
+    <title>Galerie de Photos - Mon Site Web</title>
     <!-- Intégration des polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,49 +53,80 @@
         }
         
         .gallery-item {
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            cursor: pointer;
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
             margin-bottom: 1.5rem;
         }
         
-        /* Style pour les images individuelles */
-        .image1, .image2, .image3, .image4, .image5, .image6, .image7, .image8, .image9, .image10,
-        .image11, .image12, .image13, .image14, .image15, .image16 {
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Style pour les images */
+        .gallery-image {
+            width: 100%;
             height: 200px;
-            color: white;
+            object-fit: cover;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+        
+        /* Style temporaire pour les blocs de couleur (à remplacer par vos images) */
+        .temp-image {
+            width: 100%;
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            color: white;
             font-weight: bold;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             border-radius: var(--border-radius) var(--border-radius) 0 0;
-            cursor: pointer;
             transition: transform 0.3s ease;
         }
         
-        .image1:hover, .image2:hover, .image3:hover, .image4:hover, .image5:hover, .image6:hover,
-        .image7:hover, .image8:hover, .image9:hover, .image10:hover, .image11:hover, .image12:hover,
-        .image13:hover, .image14:hover, .image15:hover, .image16:hover {
+        .temp-image:hover {
             transform: scale(1.05);
         }
         
-        .image1 { background-color: #3498db; }
-        .image2 { background-color: #2ecc71; }
-        .image3 { background-color: #e74c3c; }
-        .image4 { background-color: #f39c12; }
-        .image5 { background-color: #9b59b6; }
-        .image6 { background-color: #1abc9c; }
-        .image7 { background-color: #34495e; }
-        .image8 { background-color: #e67e22; }
-        .image9 { background-color: #16a085; }
-        .image10 { background-color: #8e44ad; }
+        .gallery-item-content {
+            padding: 1rem;
+        }
         
-        /* Style pour afficher les images des 10 à 20 */
-        .image11 { background: linear-gradient(45deg, #3498db, #2ecc71); }
-        .image12 { background: linear-gradient(45deg, #e74c3c, #f39c12); }
-        .image13 { background: linear-gradient(45deg, #9b59b6, #3498db); }
-        .image14 { background: linear-gradient(45deg, #1abc9c, #9b59b6); }
-        .image15 { background: linear-gradient(45deg, #f39c12, #1abc9c); }
-        .image16 { background: linear-gradient(45deg, #3498db, #e74c3c); }
+        .gallery-item h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .gallery-item p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        /* Couleurs temporaires */
+        .img-1 { background-color: #3498db; }
+        .img-2 { background-color: #2ecc71; }
+        .img-3 { background-color: #e74c3c; }
+        .img-4 { background-color: #f39c12; }
+        .img-5 { background-color: #9b59b6; }
+        .img-6 { background-color: #1abc9c; }
+        .img-7 { background-color: #34495e; }
+        .img-8 { background-color: #e67e22; }
+        .img-9 { background-color: #16a085; }
+        .img-10 { background-color: #8e44ad; }
+        .img-11 { background: linear-gradient(45deg, #3498db, #2ecc71); }
+        .img-12 { background: linear-gradient(45deg, #e74c3c, #f39c12); }
+        .img-13 { background: linear-gradient(45deg, #9b59b6, #3498db); }
+        .img-14 { background: linear-gradient(45deg, #1abc9c, #9b59b6); }
+        .img-15 { background: linear-gradient(45deg, #f39c12, #1abc9c); }
+        .img-16 { background: linear-gradient(45deg, #3498db, #e74c3c); }
         
         /* Style pour le modal */
         .modal {
@@ -122,6 +153,15 @@
         }
         
         .modal-image {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            display: block;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .temp-modal-image {
             height: 300px;
             border-radius: var(--border-radius);
             margin-bottom: 1.5rem;
@@ -130,6 +170,8 @@
             justify-content: center;
             font-size: 2rem;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin: 0 auto 1.5rem;
+            width: 100%;
         }
         
         .close {
@@ -149,7 +191,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>Galerie de Couleurs</h1>
+            <h1>Galerie de Photos</h1>
             <nav>
                 <ul>
                     <li><a href="../index.html">Accueil</a></li>
@@ -174,147 +216,149 @@
             
             <section class="gallery">
                 <div class="gallery-intro">
-                    <h2>L'Univers des Couleurs</h2>
-                    <p>Chaque couleur est une émotion, une histoire, un univers entier. Cette galerie présente une collection de compositions colorées, chacune véhiculant une atmosphère unique. Explorez, ressentez, et laissez-vous transporter par la magie des teintes.</p>
+                    <h2>Ma Collection de Photos</h2>
+                    <p>Voici une collection de mes photos favorites. Cliquez sur une image pour l'agrandir et découvrir plus de détails.</p>
                 </div>
                 
                 <div class="gallery-filters">
                     <button class="filter-btn active" data-filter="all">Toutes</button>
-                    <button class="filter-btn" data-filter="blue">Bleues</button>
-                    <button class="filter-btn" data-filter="green">Vertes</button>
-                    <button class="filter-btn" data-filter="red">Rouges</button>
-                    <button class="filter-btn" data-filter="other">Autres</button>
+                    <button class="filter-btn" data-filter="portraits">Portraits</button>
+                    <button class="filter-btn" data-filter="selfies">Selfies</button>
+                    <button class="filter-btn" data-filter="autres">Autres</button>
                 </div>
                 
-                <!-- Galerie en grille fixe, pas générée par JavaScript -->
+                <!-- Galerie en grille fixe -->
                 <div class="gallery-container">
-                    <div class="gallery-item" data-category="blue">
-                        <div class="image1">Image 1</div>
+                    <!-- Pour intégrer vos vraies images, remplacez les div "temp-image" par des balises img -->
+                    <!-- Exemple : <img src="../images/image1.jpg" alt="Image 1" class="gallery-image"> -->
+                    
+                    <div class="gallery-item" data-category="selfies">
+                        <!-- REMPLACER PAR VOTRE IMAGE : -->
+                        <div class="temp-image img-1">Image 1</div>
+                        <!-- AVEC : <img src="../images/image1.jpg" alt="Image 1" class="gallery-image"> -->
                         <div class="gallery-item-content">
-                            <h3>Image 1</h3>
-                            <p>Description de l'image 1 - Une teinte de bleu qui évoque le calme et la sérénité.</p>
+                            <h3>Selfie n°1</h3>
+                            <p>Un selfie miroir qui capture un instant de confiance et d'expression personnelle.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="green">
-                        <div class="image2">Image 2</div>
+                    <div class="gallery-item" data-category="portraits">
+                        <div class="temp-image img-2">Image 2</div>
                         <div class="gallery-item-content">
-                            <h3>Image 2</h3>
-                            <p>Description de l'image 2 - Le vert représente la nature et la croissance.</p>
+                            <h3>Rencontre estivale</h3>
+                            <p>Une belle journée d'été entre amis, sous l'ombre rafraîchissante des arbres.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="red">
-                        <div class="image3">Image 3</div>
+                    <div class="gallery-item" data-category="portraits">
+                        <div class="temp-image img-3">Image 3</div>
                         <div class="gallery-item-content">
-                            <h3>Image 3</h3>
-                            <p>Description de l'image 3 - Le rouge symbolise la passion et l'énergie.</p>
+                            <h3>Portrait élégant</h3>
+                            <p>Un portrait élégant reflétant une présence distinguée et un regard assuré.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="other">
-                        <div class="image4">Image 4</div>
+                    <div class="gallery-item" data-category="selfies">
+                        <div class="temp-image img-4">Image 4</div>
                         <div class="gallery-item-content">
-                            <h3>Image 4</h3>
-                            <p>Description de l'image 4 - L'orange évoque la chaleur et l'enthousiasme.</p>
+                            <h3>Selfie créatif</h3>
+                            <p>Un moment créatif et ludique, capturé avec des lunettes fantaisistes.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="other">
-                        <div class="image5">Image 5</div>
+                    <div class="gallery-item" data-category="selfies">
+                        <div class="temp-image img-5">Image 5</div>
                         <div class="gallery-item-content">
-                            <h3>Image 5</h3>
-                            <p>Description de l'image 5 - Le violet inspire la créativité et la spiritualité.</p>
+                            <h3>Instant serein</h3>
+                            <p>Un selfie présentant un moment de calme et de sérénité dans l'intimité.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="green">
-                        <div class="image6">Image 6</div>
+                    <div class="gallery-item" data-category="portraits">
+                        <div class="temp-image img-6">Image 6</div>
                         <div class="gallery-item-content">
-                            <h3>Image 6</h3>
-                            <p>Description de l'image 6 - Cette nuance turquoise mélange calme et vivacité.</p>
+                            <h3>Souvenirs d'enfance</h3>
+                            <p>Un enfant joyeux déguisé en héros, collectant des trésors colorés.</p>
                         </div>
                     </div>
                     
-                    <!-- Images additionnelles -->
-                    <div class="gallery-item" data-category="blue">
-                        <div class="image7">Image 7</div>
+                    <div class="gallery-item" data-category="selfies">
+                        <div class="temp-image img-7">Image 7</div>
                         <div class="gallery-item-content">
-                            <h3>Image 7</h3>
-                            <p>Description de l'image 7 - Bleu profond qui évoque l'océan et le mystère.</p>
+                            <h3>Repos nocturne</h3>
+                            <p>Un moment de détente avec un casque, capturé dans la quiétude de la nuit.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="red">
-                        <div class="image8">Image 8</div>
+                    <div class="gallery-item" data-category="autres">
+                        <div class="temp-image img-8">Image 8</div>
                         <div class="gallery-item-content">
-                            <h3>Image 8</h3>
-                            <p>Description de l'image 8 - Orangé rougeoyant comme un coucher de soleil.</p>
+                            <h3>Éclairage intime</h3>
+                            <p>La lueur d'une flamme qui illumine un visage dans l'obscurité, créant une atmosphère chaleureuse.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="green">
-                        <div class="image9">Image 9</div>
+                    <div class="gallery-item" data-category="selfies">
+                        <div class="temp-image img-9">Image 9</div>
                         <div class="gallery-item-content">
-                            <h3>Image 9</h3>
-                            <p>Description de l'image 9 - Vert émeraude rappelant les profondeurs des forêts.</p>
+                            <h3>Expression sincère</h3>
+                            <p>Un selfie qui capture une expression naturelle et non filtrée.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="other">
-                        <div class="image10">Image 10</div>
+                    <div class="gallery-item" data-category="selfies">
+                        <div class="temp-image img-10">Image 10</div>
                         <div class="gallery-item-content">
-                            <h3>Image 10</h3>
-                            <p>Description de l'image 10 - Violet intense qui symbolise le luxe et la royauté.</p>
+                            <h3>Selfie enthousiaste</h3>
+                            <p>Un selfie débordant d'énergie et de positivité, affichant un large sourire.</p>
                         </div>
                     </div>
                     
-                    <!-- Autres images gradient -->
-                    <div class="gallery-item" data-category="blue green">
-                        <div class="image11">Image 11</div>
+                    <div class="gallery-item" data-category="autres">
+                        <div class="temp-image img-11">Image 11</div>
                         <div class="gallery-item-content">
-                            <h3>Image 11</h3>
-                            <p>Description de l'image 11 - Mélange harmonieux entre bleu ciel et vert prairie.</p>
+                            <h3>Moment musclé</h3>
+                            <p>Photo miroir montrant le résultat d'un entraînement régulier et d'une discipline sportive.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="red other">
-                        <div class="image12">Image 12</div>
+                    <div class="gallery-item" data-category="autres">
+                        <div class="temp-image img-12">Image 12</div>
                         <div class="gallery-item-content">
-                            <h3>Image 12</h3>
-                            <p>Description de l'image 12 - Transition du rouge passionné vers l'orange ensoleillé.</p>
+                            <h3>Détail anatomique</h3>
+                            <p>Gros plan sur un détail anatomique, révélant la beauté des textures naturelles.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="blue other">
-                        <div class="image13">Image 13</div>
+                    <div class="gallery-item" data-category="selfies">
+                        <div class="temp-image img-13">Image 13</div>
                         <div class="gallery-item-content">
-                            <h3>Image 13</h3>
-                            <p>Description de l'image 13 - Mariage du violet mystique et du bleu apaisant.</p>
+                            <h3>Jeunesse insouciante</h3>
+                            <p>Un selfie capturant l'innocence et la spontanéité de la jeunesse.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="green other">
-                        <div class="image14">Image 14</div>
+                    <div class="gallery-item" data-category="portraits">
+                        <div class="temp-image img-14">Image 14</div>
                         <div class="gallery-item-content">
-                            <h3>Image 14</h3>
-                            <p>Description de l'image 14 - Turquoise et violet, entre mer et crépuscule.</p>
+                            <h3>Expression unique</h3>
+                            <p>Portrait capturant une expression faciale unique et mémorable.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="other green">
-                        <div class="image15">Image 15</div>
+                    <div class="gallery-item" data-category="portraits">
+                        <div class="temp-image img-15">Image 15</div>
                         <div class="gallery-item-content">
-                            <h3>Image 15</h3>
-                            <p>Description de l'image 15 - L'orange chaleureux se fondant dans un turquoise frais.</p>
+                            <h3>Sourire sincère</h3>
+                            <p>Un portrait rayonnant de bonheur authentique et de joie de vivre.</p>
                         </div>
                     </div>
                     
-                    <div class="gallery-item" data-category="blue red">
-                        <div class="image16">Image 16</div>
+                    <div class="gallery-item" data-category="selfies">
+                        <div class="temp-image img-16">Image 16</div>
                         <div class="gallery-item-content">
-                            <h3>Image 16</h3>
-                            <p>Description de l'image 16 - Contraste entre le calme du bleu et l'intensité du rouge.</p>
+                            <h3>Réflexion pensive</h3>
+                            <p>Un selfie présentant un moment de réflexion et d'introspection.</p>
                         </div>
                     </div>
                 </div>
@@ -332,7 +376,7 @@
                 <div class="color-band" style="background-color: #9b59b6;"></div>
                 <div class="color-band" style="background-color: #1abc9c;"></div>
             </div>
-            <p>&copy; 2025 - Couleurs & Design. Tous droits réservés.</p>
+            <p>&copy; 2025 - Mon Site Web. Tous droits réservés.</p>
             <div class="social-links">
                 <a href="#" class="social-link">LinkedIn</a>
                 <a href="#" class="social-link">Instagram</a>
@@ -390,40 +434,46 @@
             const closeBtn = document.querySelector('.close');
             
             // Ouvrir le modal au clic sur une image
-            document.querySelectorAll('[class^="image"]').forEach(img => {
+            document.querySelectorAll('.temp-image, .gallery-image').forEach(img => {
                 img.addEventListener('click', function() {
-                    // Récupérer le style de l'image cliquée
-                    const style = window.getComputedStyle(this);
-                    const backgroundColor = style.backgroundColor;
-                    const backgroundImage = style.backgroundImage;
-                    const textContent = this.textContent;
-                    
-                    // Récupérer le titre et la description
                     const parent = this.closest('.gallery-item');
                     const title = parent.querySelector('h3').textContent;
                     const description = parent.querySelector('p').textContent;
                     
-                    // Construire le contenu du modal
-                    let modalHTML = `
-                        <div class="modal-image" style="background-color: ${backgroundColor}; background-image: ${backgroundImage};">${textContent}</div>
-                        <h3>${title}</h3>
-                        <p>${description}</p>
-                    `;
-                    
-                    // Afficher le contenu dans le modal
-                    modalContent.innerHTML = modalHTML;
+                    // Si c'est une vraie image
+                    if (this.tagName === 'IMG') {
+                        const imgSrc = this.src;
+                        modalContent.innerHTML = `
+                            <img src="${imgSrc}" alt="${title}" class="modal-image">
+                            <h3>${title}</h3>
+                            <p>${description}</p>
+                        `;
+                    } 
+                    // Si c'est un bloc temporaire
+                    else {
+                        const style = window.getComputedStyle(this);
+                        const backgroundColor = style.backgroundColor;
+                        const backgroundImage = style.backgroundImage;
+                        const textContent = this.textContent;
+                        
+                        modalContent.innerHTML = `
+                            <div class="temp-modal-image" style="background-color: ${backgroundColor}; background-image: ${backgroundImage};">${textContent}</div>
+                            <h3>${title}</h3>
+                            <p>${description}</p>
+                        `;
+                    }
                     
                     // Afficher le modal
                     modal.style.display = 'flex';
                 });
             });
             
-            // Fermer le modal au clic sur le bouton de fermeture
+            // Fermer le modal
             closeBtn.addEventListener('click', function() {
                 modal.style.display = 'none';
             });
             
-            // Fermer le modal au clic en dehors du contenu
+            // Fermer le modal en cliquant à l'extérieur
             window.addEventListener('click', function(event) {
                 if (event.target === modal) {
                     modal.style.display = 'none';
