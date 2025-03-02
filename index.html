@@ -3,32 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Web</title>
+    <title>Mon Site Web - Accueil</title>
+    <!-- Intégration des polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Lien vers notre feuille de style -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Méta-données pour le SEO -->
+    <meta name="description" content="Site web personnel présentant ma collection de couleurs et créations visuelles">
+    <meta name="keywords" content="portfolio, couleurs, design, galerie">
+    <meta name="author" content="Votre Nom">
+    <style>
+        /* Styles spécifiques à la page d'accueil */
+        .color-spectrum {
+            display: flex;
+            height: 5px;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .color-band {
+            flex: 1;
+            height: 100%;
+        }
+        
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .color-bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(20px);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            transition: var(--transition-speed);
+        }
+        
+        .feature-card:nth-child(1)::before {
+            background-color: #3498db;
+        }
+        
+        .feature-card:nth-child(2)::before {
+            background-color: #2ecc71;
+        }
+        
+        .feature-card:nth-child(3)::before {
+            background-color: #e74c3c;
+        }
+        
+        .feature-card:hover::before {
+            width: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur Mon Site</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="pages/galerie.html">Galerie</a></li>
-                <li><a href="pages/contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Couleurs & Design</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="pages/galerie.html">Galerie</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <h2>Titre principal</h2>
-            <p>Bienvenue sur mon site web en construction.</p>
+            <!-- Bulles de couleur en arrière-plan -->
+            <div class="color-bubble" style="background-color: #3498db; width: 300px; height: 300px; top: -100px; left: -50px;"></div>
+            <div class="color-bubble" style="background-color: #2ecc71; width: 200px; height: 200px; bottom: -50px; right: 10%;"></div>
+            <div class="color-bubble" style="background-color: #e74c3c; width: 150px; height: 150px; top: 40%; right: -50px;"></div>
+            
+            <div class="container hero-content">
+                <h2 class="fade-in">L'art des couleurs</h2>
+                <p class="slide-in">Explorez un univers de couleurs et de formes, où chaque teinte raconte une histoire unique.</p>
+                <a href="pages/galerie.html" class="btn">Découvrir ma galerie</a>
+            </div>
+        </section>
+        
+        <div class="container">
+            <!-- Spectre de couleurs -->
+            <div class="color-spectrum">
+                <div class="color-band" style="background-color: #3498db;"></div>
+                <div class="color-band" style="background-color: #2ecc71;"></div>
+                <div class="color-band" style="background-color: #e74c3c;"></div>
+                <div class="color-band" style="background-color: #f39c12;"></div>
+                <div class="color-band" style="background-color: #9b59b6;"></div>
+                <div class="color-band" style="background-color: #1abc9c;"></div>
+            </div>
+        </div>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Mon Univers</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Galerie de Couleurs</h3>
+                        <p>Explorez ma collection unique de compositions colorées, chaque teinte ayant sa propre personnalité.</p>
+                        <a href="pages/galerie.html" class="feature-link">Voir la galerie →</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>L'Harmonie des Teintes</h3>
+                        <p>Découvrez comment les couleurs interagissent et créent des émotions à travers mes projets.</p>
+                        <a href="#" class="feature-link">Explorer les projets →</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💌</div>
+                        <h3>Collaborons</h3>
+                        <p>Vous avez un projet en tête ou une idée de collaboration colorée ? Contactez-moi !</p>
+                        <a href="pages/contact.html" class="feature-link">Me contacter →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">À propos</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <!-- Image stylisée avec des couleurs -->
+                        <div style="width: 300px; height: 300px; background: linear-gradient(45deg, #3498db, #2ecc71, #e74c3c); border-radius: var(--border-radius);"></div>
+                    </div>
+                    <div class="about-text">
+                        <h3>Ma Philosophie</h3>
+                        <p>Je suis passionné par l'art de la couleur et du design. Mon approche est basée sur la simplicité et l'émotion que peut susciter une palette bien choisie.</p>
+                        <p>Chaque couleur raconte une histoire, évoque une émotion, définit une ambiance. À travers mes créations, j'explore les infinies possibilités qu'offre le spectre chromatique.</p>
+                        <p>Mon parcours m'a permis d'expérimenter avec différentes teintes et nuances, créant des œuvres qui parlent au cœur et à l'esprit.</p>
+                        <a href="pages/contact.html" class="btn">Me contacter</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 - Mon Site Web</p>
+        <div class="container">
+            <div class="color-spectrum">
+                <div class="color-band" style="background-color: #3498db;"></div>
+                <div class="color-band" style="background-color: #2ecc71;"></div>
+                <div class="color-band" style="background-color: #e74c3c;"></div>
+                <div class="color-band" style="background-color: #f39c12;"></div>
+                <div class="color-band" style="background-color: #9b59b6;"></div>
+                <div class="color-band" style="background-color: #1abc9c;"></div>
+            </div>
+            <p>&copy; 2025 - Couleurs & Design. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Behance</a>
+            </div>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Script pour animer les bulles de couleur
+        document.addEventListener('DOMContentLoaded', function() {
+            const bubbles = document.querySelectorAll('.color-bubble');
+            
+            bubbles.forEach(bubble => {
+                setInterval(() => {
+                    const randomX = Math.random() * 20 - 10;
+                    const randomY = Math.random() * 20 - 10;
+                    
+                    bubble.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
