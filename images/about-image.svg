@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arrière-plan -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db" />
+      <stop offset="50%" stop-color="#2ecc71" />
+      <stop offset="100%" stop-color="#e74c3c" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Arrière-plan -->
+  <rect width="300" height="300" rx="8" fill="url(#bgGradient)" />
+  
+  <!-- Cercles décoratifs -->
+  <circle cx="75" cy="75" r="40" fill="white" fill-opacity="0.2" />
+  <circle cx="225" cy="225" r="40" fill="white" fill-opacity="0.2" />
+  
+  <!-- Éléments design -->
+  <rect x="50" y="125" width="200" height="15" rx="5" fill="white" fill-opacity="0.4" />
+  <rect x="50" y="150" width="150" height="15" rx="5" fill="white" fill-opacity="0.4" />
+  <rect x="50" y="175" width="180" height="15" rx="5" fill="white" fill-opacity="0.4" />
+  <rect x="50" y="200" width="130" height="15" rx="5" fill="white" fill-opacity="0.4" />
+  
+  <!-- Éléments graphiques -->
+  <polygon points="260,50 230,65 260,80" fill="white" fill-opacity="0.6" />
+  <polygon points="40,230 70,215 70,245" fill="white" fill-opacity="0.6" />
+</svg>
