@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#8e44ad" />
+  <circle cx="120" cy="80" r="30" fill="white" fill-opacity="0.2" />
+  <circle cx="180" cy="80" r="30" fill="white" fill-opacity="0.2" />
+  <path d="M120,120 Q150,140 180,120" stroke="white" stroke-width="5" fill="none" stroke-opacity="0.5" />
+  <text x="150" y="170" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Selfie enthousiaste</text>
+</svg>
