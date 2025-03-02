@@ -490,11 +490,10 @@ footer {
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity var(--transition-speed) ease;
 }
 
 .modal.show {
+    display: flex !important;
     opacity: 1;
 }
 
@@ -506,20 +505,16 @@ footer {
     max-height: 80%;
     overflow: auto;
     position: relative;
-    transform: scale(0.9);
-    transition: transform var(--transition-speed) ease;
-}
-
-.modal.show .modal-content {
     transform: scale(1);
 }
 
-.modal-content img,
-.modal-content .color-box {
+.modal-image {
     max-width: 100%;
-    height: auto;
+    max-height: 70vh;
     border-radius: var(--border-radius);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin: 0 auto 1.5rem;
 }
 
 .close {
