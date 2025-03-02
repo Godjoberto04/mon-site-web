@@ -110,6 +110,10 @@
             align-items: center;
         }
         
+        .modal.show {
+            display: flex;
+        }
+        
         .modal-content {
             background-color: var(--color-dark);
             color: var(--color-text);
@@ -118,6 +122,7 @@
             padding: 2rem;
             border-radius: var(--border-radius);
             position: relative;
+            overflow: auto;
         }
         
         .modal-image {
@@ -397,20 +402,20 @@
                         <p>${description}</p>
                     `;
                     
-                    // Afficher le modal
-                    modal.style.display = 'flex';
+                    // Afficher le modal en ajoutant la classe show
+                    modal.classList.add('show');
                 });
             });
             
             // Fermer le modal
             closeBtn.addEventListener('click', function() {
-                modal.style.display = 'none';
+                modal.classList.remove('show');
             });
             
             // Fermer le modal en cliquant à l'extérieur
             window.addEventListener('click', function(event) {
                 if (event.target === modal) {
-                    modal.style.display = 'none';
+                    modal.classList.remove('show');
                 }
             });
         });
