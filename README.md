@@ -1,6 +1,6 @@
-# Mon Site Web
+# Couleurs & Design
 
-Bienvenue dans le repository de mon site web personnel.
+Bienvenue dans le repository de mon site web personnel consacré aux couleurs et au design.
 
 ## Visualiser le site
 
@@ -12,19 +12,19 @@ Visitez le site en ligne à l'adresse : [https://godjoberto04.github.io/mon-site
 - `css/` : Feuilles de style CSS
 - `js/` : Scripts JavaScript
   - `main.js` : Script principal
-  - `gallery.js` : Script pour la galerie d'images
+  - `gallery.js` : Script pour la galerie de couleurs
 - `pages/` : Pages secondaires du site
-  - `galerie.html` : Galerie d'images
+  - `galerie.html` : Galerie de couleurs
   - `contact.html` : Formulaire de contact
 - `.github/workflows/` : Configuration pour le déploiement automatique
 
-## Tâches à réaliser
+## Tâches réalisées
 
 - [x] Créer la structure de base du projet
 - [x] Résoudre le problème d'affichage des images (en utilisant des blocs de couleur)
-- [x] Implémenter la galerie d'images fonctionnelle
+- [x] Implémenter la galerie de couleurs fonctionnelle
 - [x] Configurer GitHub Pages pour visualiser le site en ligne
-- [ ] Améliorer le design du site
+- [x] Améliorer le design du site
 - [ ] Créer un formulaire de contact fonctionnel
 - [ ] Optimiser pour les appareils mobiles
 
@@ -35,18 +35,19 @@ Visitez le site en ligne à l'adresse : [https://godjoberto04.github.io/mon-site
 - Mise en place de la structure de base
 - Ajout de la solution pour la galerie d'images utilisant des blocs de couleur
 - Configuration de GitHub Pages pour le déploiement continu
+- Amélioration du design avec un thème coloré
 
 ## Fonctionnalités implémentées
 
-### Galerie d'images
+### Galerie de couleurs
 - Affichage des blocs de couleur en grille
 - Effet d'animation au survol
 - Modal pour afficher les détails en grand format
 
-### Pages de base
-- Structure HTML en place
-- Navigation entre les pages
-- Styles CSS de base
+### Design coloré
+- Palette de couleurs cohérente
+- Animations subtiles
+- Interface responsive
 
 ## Comment exécuter le projet localement
 
