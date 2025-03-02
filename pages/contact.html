@@ -3,63 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Mon Site Web</title>
+    <title>Contact - Couleurs & Design</title>
+    <!-- Intégration des polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .contact-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            padding-right: 2rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--color-secondary);
+        }
+        
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+        }
+        
+        .contact-item p {
+            margin: 0;
+        }
+        
+        .social-block {
+            margin-top: 3rem;
+        }
+        
+        .social-block h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                padding-right: 0;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 2rem;
+            }
+        }
+        
+        /* Style pour le message de confirmation */
+        #formStatus {
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        #formStatus.success {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+        
+        #formStatus.error {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Contact</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Contact</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="contact">
-            <h2>Me Contacter</h2>
-            <p>Vous pouvez me contacter en utilisant le formulaire ci-dessous.</p>
-            
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nom :</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email :</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Sujet :</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message :</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit">Envoyer</button>
-                </form>
-                
-                <div id="formStatus" style="display: none;"></div>
+        <div class="container">
+            <!-- Spectre de couleurs -->
+            <div class="color-spectrum">
+                <div class="color-band" style="background-color: #3498db;"></div>
+                <div class="color-band" style="background-color: #2ecc71;"></div>
+                <div class="color-band" style="background-color: #e74c3c;"></div>
+                <div class="color-band" style="background-color: #f39c12;"></div>
+                <div class="color-band" style="background-color: #9b59b6;"></div>
+                <div class="color-band" style="background-color: #1abc9c;"></div>
             </div>
-        </section>
+            
+            <section class="contact">
+                <div class="contact-intro">
+                    <h2>Restons en Contact</h2>
+                    <p>Vous avez une question, une idée de collaboration ou simplement envie d'échanger sur les couleurs et le design ? N'hésitez pas à me contacter via le formulaire ci-dessous ou en utilisant les informations de contact directes.</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Informations de Contact</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <p><strong>Email</strong></p>
+                                <p>contact@couleurs-design.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <p><strong>Téléphone</strong></p>
+                                <p>+33 6 12 34 56 78</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🌍</div>
+                            <div>
+                                <p><strong>Localisation</strong></p>
+                                <p>Paris, France</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-block">
+                            <h3>Suivez-moi</h3>
+                            <p>Retrouvez mes créations et actualités sur les réseaux sociaux</p>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon">In</a>
+                                <a href="#" class="social-icon">Ig</a>
+                                <a href="#" class="social-icon">Be</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h3>Envoyez-moi un Message</h3>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nom</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Sujet</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit">Envoyer le Message</button>
+                        </form>
+                        
+                        <div id="formStatus" style="display: none;"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 - Mon Site Web</p>
+        <div class="container">
+            <div class="color-spectrum">
+                <div class="color-band" style="background-color: #3498db;"></div>
+                <div class="color-band" style="background-color: #2ecc71;"></div>
+                <div class="color-band" style="background-color: #e74c3c;"></div>
+                <div class="color-band" style="background-color: #f39c12;"></div>
+                <div class="color-band" style="background-color: #9b59b6;"></div>
+                <div class="color-band" style="background-color: #1abc9c;"></div>
+            </div>
+            <p>&copy; 2025 - Couleurs & Design. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Behance</a>
+            </div>
+        </div>
     </footer>
 
-    <script src="../js/main.js"></script>
     <script>
-        // Script spécifique pour la page de contact
+        // Script pour la gestion du formulaire de contact
         document.addEventListener('DOMContentLoaded', function() {
             const contactForm = document.getElementById('contactForm');
             const formStatus = document.getElementById('formStatus');
@@ -68,13 +245,18 @@
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Simuler l'envoi du formulaire (à remplacer par un vrai traitement)
+                    // Simulation d'envoi du formulaire (à remplacer par un vrai service d'envoi de mail)
                     formStatus.style.display = 'block';
                     formStatus.textContent = 'Merci pour votre message ! Je vous répondrai dès que possible.';
-                    formStatus.style.color = 'green';
+                    formStatus.className = 'success';
                     
                     // Réinitialiser le formulaire
                     contactForm.reset();
+                    
+                    // Masquer le message après 5 secondes
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 5000);
                 });
             }
         });
